@@ -37,50 +37,49 @@
       font-weight: normal;
       font-size: 1.1rem;
       margin: 0;
-      padding: 2rem 2rem 5rem 2rem;
+      padding: 0.5rem 0.5rem 5rem 0.5rem;
       background-color: var(--bg-body);
       color: var(--text-main);
       line-height: 1.5;
     }
 
-    h1,
-    h2,
-    h3 {
-      font-weight: bold;
-    }
-
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
       text-align: center;
       margin: 0.5rem 0 0.2rem 0;
       color: var(--text-main);
     }
 
     h2 {
-      font-size: 1.3rem;
-      margin: 1rem 0 1rem 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 1rem 0 0.5rem 0;
     }
 
     h3 {
       font-size: 1.2rem;
-      margin: 1rem 0 0.8rem 0;
+      font-weight: bold;
+      margin: 1rem 0 0.5rem 0;
     }
 
     .author {
       font-size: 1.2rem;
+      font-weight: normal;
+      font-style: normal;
       text-align: right;
-      color: black;
+      color: var(--text-alt);
       margin-bottom: 1rem;
     }
 
     .upload-container {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .drop-zone {
       border: 2px dashed var(--primary);
       border-radius: var(--radius-default);
-      padding: 1rem 1rem;
+      padding: 1rem;
       text-align: center;
       background-color: var(--bg-card);
       cursor: pointer;
@@ -94,15 +93,15 @@
     }
 
     .drop-zone svg {
-      width: 4rem;
-      height: 4rem;
+      width: 3.5rem;
+      height: 3.5rem;
       fill: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .drop-zone-text {
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
       color: var(--text-main);
     }
 
@@ -120,15 +119,155 @@
       border: 2px solid var(--border-color);
       border-radius: var(--radius-default);
       background-color: var(--bg-alt);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       display: none;
       font-weight: normal;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 0.75rem;
+      background-color: var(--bg-card);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-top: 0.5rem;
+      border: 2px solid var(--border-color);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .config-container {
+      display: none;
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-default);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      flex-wrap: wrap;
+    }
+
+    .config-title {
+      font-weight: bold;
+      color: var(--text-main);
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .config-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-grow: 1;
+      flex-wrap: wrap;
+    }
+
+    .config-input {
+      padding: 0.5rem 0.6rem;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-default);
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    .config-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .download-all-container {
+      display: none;
+      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .btn-download-all,
+    .btn-apply {
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: var(--radius-default);
+      transition: background-color 0.15s, border-color 0.15s;
+      border: 2px solid transparent;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+    }
+
+    .btn-apply {
+      padding: 0.5rem 1.5rem;
+      border-color: var(--primary);
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-apply:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+
+    .btn-download-all {
+      border-color: var(--success);
+      background-color: var(--success);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+    }
+
+    .btn-download-all:hover {
+      background-color: var(--success-hover);
+      border-color: var(--success-hover);
+    }
+
+    .btn-download-all:disabled {
+      background-color: var(--success-disabled);
+      border-color: var(--success-disabled);
+      cursor: not-allowed;
+    }
+
+    .btn-cancel {
+      border-color: var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-alt);
+    }
+
+    .btn-cancel:hover {
+      background-color: var(--bg-alt);
+      border-color: var(--border-hover);
+    }
+
+    .btn-confirm {
+      border-color: var(--primary);
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-confirm:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
     }
 
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
     .image-card {
@@ -143,7 +282,7 @@
     }
 
     .image-card:hover {
-      transform: translateY(-0.25rem);
+      transform: translateY(-0.2rem);
       border-color: var(--primary);
     }
 
@@ -164,25 +303,23 @@
     }
 
     .image-info {
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       flex-grow: 1;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
     }
 
     .image-name {
       font-weight: bold;
       word-break: break-all;
       color: var(--text-main);
+      font-size: 1rem;
     }
 
     .image-meta {
       font-size: 0.95rem;
       color: var(--text-alt);
-      white-space: nowrap;
     }
 
     .modal-overlay {
@@ -191,7 +328,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.65);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -199,6 +336,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s ease;
+      padding: 1rem;
     }
 
     .modal-overlay.active {
@@ -210,12 +348,17 @@
       background-color: var(--bg-card);
       border: 2px solid var(--text-main);
       border-radius: var(--radius-default);
-      width: 90%;
-      max-width: 28rem;
-      padding: 1.5rem;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2rem);
+      width: 100%;
+      max-width: 32rem;
+      padding: 1rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+      transform: translateY(-1rem);
       transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-overlay.active .modal-container {
@@ -225,194 +368,50 @@
     .modal-header {
       font-size: 1.3rem;
       font-weight: bold;
-      margin-bottom: 1rem;
       color: var(--text-main);
     }
 
+    .modal-img-preview {
+      width: 100%;
+      max-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-alt);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-default);
+      padding: 0.5rem;
+      overflow: hidden;
+    }
+
+    .modal-img-preview img {
+      max-width: 100%;
+      max-height: 50vh;
+      object-fit: contain;
+    }
+
     .modal-body {
-      margin-bottom: 1.5rem;
       color: var(--text-alt);
+      font-size: 1rem;
     }
 
     .modal-footer {
       display: flex;
       justify-content: flex-end;
-      gap: 1rem;
-    }
-
-    /* Định nghĩa chung cho tất cả nút bấm */
-    .btn,
-    .btn-download-all,
-    .btn-apply {
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: var(--radius-default);
-      transition: background-color 0.15s, border-color 0.15s;
-      border: 2px solid transparent;
-    }
-
-    .btn {
-      padding: 0.6rem 1.2rem;
-    }
-
-    .btn-cancel {
-      border-color: var(--border-color);
-      background-color: var(--bg-card);
-      color: var(--text-alt);
-    }
-
-    .btn-cancel:hover {
-      background-color: var(--bg-alt);
-      border-color: var(--border-hover);
-    }
-
-    .btn-confirm,
-    .btn-apply {
-      border-color: var(--primary);
-      background-color: var(--primary);
-      color: var(--bg-card);
-    }
-
-    .btn-confirm:hover,
-    .btn-apply:hover {
-      background-color: var(--primary-hover);
-      border-color: var(--primary-hover);
-    }
-
-    .btn-apply {
-      padding: 0.65rem 1.8rem;
-    }
-
-    .download-all-container {
-      display: none;
-      margin-bottom: 1.5rem;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-download-all {
-      border-color: var(--success);
-      background-color: var(--success);
-      color: var(--bg-card);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-    }
-
-    .btn-download-all:hover {
-      background-color: var(--success-hover);
-      border-color: var(--success-hover);
-    }
-
-    .btn-download-all:disabled {
-      background-color: var(--success-disabled);
-      border-color: var(--success-disabled);
-      cursor: not-allowed;
-    }
-
-    .pdf-config-container {
-      display: none;
-      background-color: var(--bg-card);
-      border: 2px solid var(--border-color);
-      border-radius: var(--radius-default);
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
-      align-items: center;
-      gap: 1rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      flex-wrap: wrap;
-    }
-
-    .pdf-config-title {
-      font-weight: bold;
-      color: var(--text-main);
-      font-size: 1.1rem;
-      white-space: nowrap;
-    }
-
-    .pdf-config-input-group {
-      display: flex;
-      align-items: center;
       gap: 0.75rem;
-      flex-grow: 1;
-      flex-wrap: wrap;
-    }
-
-    .pdf-config-input {
-      flex-grow: 1;
-      min-width: 10rem;
-      padding: 0.6rem;
-      border: 2px solid var(--border-color);
-      border-radius: var(--radius-default);
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
-    .pdf-config-input:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    .pdf-zoom-group,
-    .pdf-quality-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    @media (max-width: 48rem) {
-      body {
-        padding: 1rem 1rem 5rem 1rem;
-      }
-
-      .drop-zone {
-        padding: 2rem 1rem;
-      }
-
-      .pdf-config-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-        padding: 1rem;
-      }
-
-      .pdf-config-input-group {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-      }
-
-      .pdf-zoom-group,
-      .pdf-quality-group {
-        justify-content: space-between;
-      }
-
-      .pdf-config-input {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .btn-apply {
-        width: 100%;
-      }
     }
 
     .pagination-container {
       display: none;
       justify-content: center;
       align-items: center;
-      gap: 0.75rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .btn-pagination {
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       font-size: 0.95rem;
       border: 2px solid var(--border-color);
       background-color: var(--bg-card);
@@ -432,12 +431,11 @@
     #page-info {
       font-weight: bold;
       color: var(--text-main);
-      text-align: left;
     }
 
     #page-input {
       width: 3.5rem;
-      padding: 0.35rem;
+      padding: 0.3rem;
       border: 2px solid var(--border-color);
       border-radius: var(--radius-default);
       text-align: center;
@@ -446,7 +444,6 @@
       font-family: inherit;
       color: var(--text-main);
       background-color: var(--bg-card);
-      transition: border-color 0.15s;
     }
 
     #page-input:focus {
@@ -454,35 +451,44 @@
       border-color: var(--primary);
     }
 
-    #page-input::-webkit-outer-spin-button,
-    #page-input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    #page-input {
-      -moz-appearance: textfield;
-    }
-
     @keyframes spin {
       0% {
         transform: rotate(0deg);
       }
-
       100% {
         transform: rotate(360deg);
       }
     }
+
+    @media (max-width: 48rem) {
+      body {
+        padding: 0.5rem 0.5rem 5rem 0.5rem;
+      }
+
+      .config-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .config-input-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-apply {
+        width: 100%;
+      }
+    }
   </style>
-  <!-- Nhúng thư viện JSZip từ CDN để xử lý giải nén file docx ngay tại trình duyệt -->
+
+  <!-- Thư viện JSZip -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script>window.JSZip || document.write('<script src="js/jszip.min.js"><\/script>')</script>
-  <!-- Nhúng thư viện PDF.js từ CDN để xử lý trích xuất hình ảnh từ file PDF -->
+
+  <!-- Thư viện PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    // Đánh dấu xem có tải được từ CDN không
     window.isPdfjsCdnLoaded = !!window.pdfjsLib;
-    // Cơ chế fallback: Nếu không tải được PDF.js từ CDN, thử tải file cục bộ trong thư mục js/
     window.pdfjsLib || document.write('<script src="js/pdf.min.js"><\/script>');
   </script>
 </head>
@@ -494,90 +500,103 @@
 
   <div class="upload-container">
     <div class="drop-zone" id="drop-zone">
-      <!-- Icon SVG Upload -->
       <svg viewBox="0 0 24 24">
-        <path
-          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
       </svg>
       <div class="drop-zone-text">Kéo thả file .docx hoặc .pdf vào đây hoặc bấm để chọn file</div>
-      <div class="drop-zone-hint">Bạn cũng có thể sao chép file .docx / .pdf và nhấn Ctrl + V ở bất kỳ đâu trên trang
-        này để dán vào</div>
+      <div class="drop-zone-hint">Bạn cũng có thể sao chép file .docx / .pdf và nhấn Ctrl + V ở bất kỳ đâu trên trang này để dán vào</div>
     </div>
     <input type="file" id="file-input" accept=".docx,.pdf">
   </div>
-  <!-- Khung cấu hình chọn trang PDF -->
-  <!-- Khung cấu hình file DOCX -->
-  <div class="pdf-config-container" id="docx-config-container" style="display: none;">
-    <div class="pdf-config-title">Bộ lọc kích thước ảnh:</div>
-    <div class="pdf-config-input-group">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="font-weight: bold; color: var(--text-main); font-size: 1rem; white-space: nowrap;">Rộng tối
-          thiểu:</span>
-        <input type="number" id="docx-min-width" class="pdf-config-input" min="0" value="100"
-          style="padding: 0.55rem; width: 5.5rem; flex-grow: 0; min-width: 5.5rem; text-align: center;">
-        <span style="color: var(--text-muted); font-size: 1rem; margin-right: 0.5rem;">px</span>
-      </div>
 
+  <!-- Cấu hình chọn tính năng cho file DOCX -->
+  <div class="config-container" id="docx-config-container">
+    <div class="config-title">Bộ lọc kích thước ảnh DOCX:</div>
+    <div class="config-input-group">
       <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="font-weight: bold; color: var(--text-main); font-size: 1rem; white-space: nowrap;">Cao tối
-          thiểu:</span>
-        <input type="number" id="docx-min-height" class="pdf-config-input" min="0" value="100"
-          style="padding: 0.55rem; width: 5.5rem; flex-grow: 0; min-width: 5.5rem; text-align: center;">
-        <span style="color: var(--text-muted); font-size: 1rem; margin-right: 0.5rem;">px</span>
+        <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Rộng tối thiểu:</span>
+        <input type="number" id="docx-min-width" class="config-input" min="0" value="100" style="width: 5.5rem; text-align: center;">
+        <span style="color: var(--text-muted);">px</span>
       </div>
-
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Cao tối thiểu:</span>
+        <input type="number" id="docx-min-height" class="config-input" min="0" value="100" style="width: 5.5rem; text-align: center;">
+        <span style="color: var(--text-muted);">px</span>
+      </div>
       <button class="btn-apply" id="btn-apply-docx">Áp dụng</button>
     </div>
   </div>
 
-  <!-- Khung cấu hình chọn trang PDF -->
-  <div class="pdf-config-container" id="pdf-config-container">
-    <div class="pdf-config-title" id="pdf-config-title">Chọn trang:</div>
-    <div class="pdf-config-input-group">
-      <input type="text" class="pdf-config-input" id="pdf-page-range"
-        placeholder="Ví dụ: 1, 3, 5-8 (để trống để chuyển đổi tất cả)">
-
-      <div class="pdf-zoom-group">
-        <span style="font-weight: bold; color: #0f172a; font-size: 1rem; white-space: nowrap;">Độ phân giải:</span>
-        <select id="pdf-zoom" class="pdf-config-input"
-          style="padding: 0.55rem; width: 5.5rem; flex-grow: 0; min-width: 5.5rem;">
-          <option value="2">2x</option>
-          <option value="4" selected>4x</option>
-          <option value="6">6x</option>
+  <!-- Cấu hình chọn tính năng cho file PDF -->
+  <div class="config-container" id="pdf-config-container">
+    <div class="config-title">Cấu hình xử lý PDF:</div>
+    <div class="config-input-group">
+      <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Phương thức:</span>
+        <select id="pdf-method" class="config-input" style="font-weight: bold; color: var(--primary-dark);">
+          <option value="raw" selected>Lấy ảnh gốc (Trích xuất hình ảnh nguyên bản)</option>
+          <option value="page">Lấy cả trang (Chụp toàn bộ trang PDF thành ảnh)</option>
         </select>
       </div>
 
-      <div class="pdf-quality-group">
-        <span style="font-weight: bold; color: #0f172a; font-size: 1rem; white-space: nowrap;">Chất lượng JPG
-          (%):</span>
-        <input type="number" id="pdf-quality" class="pdf-config-input" min="1" max="100" value="93"
-          style="padding: 0.55rem; width: 4.5rem; flex-grow: 0; min-width: 4.5rem; text-align: center;">
+      <!-- Khung tùy chọn khi chụp cả trang -->
+      <div id="pdf-page-options" style="display: none; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Độ phân giải:</span>
+          <select id="pdf-zoom" class="config-input" style="width: 5rem;">
+            <option value="2">2x</option>
+            <option value="4" selected>4x</option>
+            <option value="6">6x</option>
+          </select>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Chất lượng JPG (%):</span>
+          <input type="number" id="pdf-quality" class="config-input" min="1" max="100" value="93" style="width: 4.5rem; text-align: center;">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Chọn trang:</span>
+          <input type="text" id="pdf-page-range" class="config-input" placeholder="Ví dụ: 1, 3, 5-8 (để trống: tất cả)" style="min-width: 12rem;">
+        </div>
       </div>
 
-      <button class="btn-apply" id="btn-apply-pages">Áp dụng</button>
+      <!-- Bộ lọc kích thước cho PDF -->
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Rộng tối thiểu:</span>
+        <input type="number" id="pdf-min-width" class="config-input" min="0" value="100" style="width: 5.5rem; text-align: center;">
+        <span style="color: var(--text-muted);">px</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: bold; color: var(--text-main); white-space: nowrap;">Cao tối thiểu:</span>
+        <input type="number" id="pdf-min-height" class="config-input" min="0" value="100" style="width: 5.5rem; text-align: center;">
+        <span style="color: var(--text-muted);">px</span>
+      </div>
+
+      <button class="btn-apply" id="btn-apply-pdf">Áp dụng</button>
     </div>
   </div>
 
   <!-- Nút tải xuống tất cả ảnh dưới dạng ZIP -->
   <div class="download-all-container" id="download-all-container">
-    <button class="btn-download-all" id="btn-download-current"
-      style="background-color: var(--primary); border-color: var(--primary);">
+    <button class="btn-download-all" id="btn-download-current" style="background-color: var(--primary); border-color: var(--primary);">
       <svg style="width: 1.2rem; height: 1.2rem; fill: currentColor;" viewBox="0 0 24 24">
-        <path
-          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
       </svg>
       <span id="btn-download-current-text">Tải xuống trang hiện tại (.zip) - 0,0 KB</span>
     </button>
     <button class="btn-download-all" id="btn-download-all">
       <svg style="width: 1.2rem; height: 1.2rem; fill: currentColor;" viewBox="0 0 24 24">
-        <path
-          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
       </svg>
       <span id="btn-download-all-text">Tải xuống tất cả ảnh (.zip) - 0,0 KB</span>
     </button>
   </div>
 
-  <div class="status-message" id="status-message"></div>
+  <div class="status-message" id="status-message">
+    <div id="status-text">Đang chuẩn bị...</div>
+    <div class="progress-bar-container" id="progress-container" style="display: none;">
+      <div id="progress-bar" class="progress-bar-fill"></div>
+    </div>
+  </div>
 
   <div class="image-grid" id="image-grid"></div>
 
@@ -593,58 +612,85 @@
     <button class="btn btn-pagination" id="btn-page-last">Cuối</button>
   </div>
 
-  <!-- Custom Modal xác nhận tải xuống -->
+  <!-- Modal xác nhận tải xuống / xem trước -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-container">
-      <div class="modal-header">Xác nhận tải xuống</div>
-      <div class="modal-body" id="modal-message">Bạn có muốn tải xuống hình ảnh này không?</div>
+      <div class="modal-header" id="modal-header">Chi tiết hình ảnh</div>
+      <div class="modal-img-preview">
+        <img id="modal-img" src="" alt="Xem trước">
+      </div>
+      <div class="modal-body" id="modal-message">Thông tin chi tiết của hình ảnh...</div>
       <div class="modal-footer">
-        <button class="btn btn-cancel" id="btn-cancel">Huỷ bỏ</button>
-        <button class="btn btn-confirm" id="btn-confirm">Tải xuống</button>
+        <button class="btn btn-cancel" id="btn-cancel">Đóng</button>
+        <button class="btn btn-confirm" id="btn-confirm">Tải xuống ảnh này</button>
       </div>
     </div>
   </div>
 
-
   <script>
+    // DOM Elements
     const dropZone = document.getElementById('drop-zone');
     const fileInput = document.getElementById('file-input');
     const statusMessage = document.getElementById('status-message');
+    const statusText = document.getElementById('status-text');
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
     const imageGrid = document.getElementById('image-grid');
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalMessage = document.getElementById('modal-message');
-    const btnCancel = document.getElementById('btn-cancel');
-    const btnConfirm = document.getElementById('btn-confirm');
-
-    const pdfConfigContainer = document.getElementById('pdf-config-container');
-    const pdfPageRangeInput = document.getElementById('pdf-page-range');
-    const pdfZoomSelect = document.getElementById('pdf-zoom');
-    const pdfQualityInput = document.getElementById('pdf-quality');
-    const btnApplyPages = document.getElementById('btn-apply-pages');
 
     const docxConfigContainer = document.getElementById('docx-config-container');
     const docxMinWidth = document.getElementById('docx-min-width');
     const docxMinHeight = document.getElementById('docx-min-height');
     const btnApplyDocx = document.getElementById('btn-apply-docx');
 
+    const pdfConfigContainer = document.getElementById('pdf-config-container');
+    const pdfMethod = document.getElementById('pdf-method');
+    const pdfPageOptions = document.getElementById('pdf-page-options');
+    const pdfZoomSelect = document.getElementById('pdf-zoom');
+    const pdfQualityInput = document.getElementById('pdf-quality');
+    const pdfPageRangeInput = document.getElementById('pdf-page-range');
+    const pdfMinWidth = document.getElementById('pdf-min-width');
+    const pdfMinHeight = document.getElementById('pdf-min-height');
+    const btnApplyPdf = document.getElementById('btn-apply-pdf');
+
     const downloadAllContainer = document.getElementById('download-all-container');
     const btnDownloadAll = document.getElementById('btn-download-all');
     const btnDownloadCurrent = document.getElementById('btn-download-current');
 
-    let currentDownloadFile = null;
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalHeader = document.getElementById('modal-header');
+    const modalImg = document.getElementById('modal-img');
+    const modalMessage = document.getElementById('modal-message');
+    const btnCancel = document.getElementById('btn-cancel');
+    const btnConfirm = document.getElementById('btn-confirm');
+
+    // Global State
     let currentFile = null;
     let currentFileType = null; // 'docx' hoặc 'pdf'
-    let extractedImages = []; // Danh sách chứa thông tin ảnh
-    let allDocxImages = []; // Danh sách chứa toàn bộ ảnh từ file docx cùng kích thước của chúng
-    let activePdfDoc = null; // Đối tượng tài liệu PDF hiện tại
-    let activeZip = null; // Đối tượng tài liệu zip DOCX hiện tại
-    let pdfZoomScale = 4.0;
-    let pdfQualityScale = 0.93;
     let baseName = '';
+    let activePdfDoc = null;
+    let activePdfBuffer = null;
+
+    let rawDocxImages = []; // Danh sách toàn bộ ảnh thô thu thập từ DOCX
+    let rawPdfImages = [];  // Danh sách toàn bộ ảnh thô thu thập từ PDF
+    let filteredImages = []; // Danh sách ảnh đã lọc chuẩn bị hiển thị & tải xuống
 
     let currentPage = 1;
     const itemsPerPage = 20;
+    let currentDownloadItem = null;
 
+    // Định dạng dung lượng theo chuẩn Việt Nam
+    function formatFileSize(bytes) {
+      if (!bytes || bytes <= 0) return '0 B';
+      if (bytes < 1024) {
+        return bytes.toLocaleString('vi-VN') + ' B';
+      } else if (bytes < 1024 * 1024) {
+        return Math.round(bytes / 1024).toLocaleString('vi-VN') + ' KB';
+      } else {
+        return (bytes / (1024 * 1024)).toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' MB';
+      }
+    }
+
+    // Lấy kích thước ảnh từ Object URL
     function getImageDimensions(url) {
       return new Promise((resolve) => {
         const tempImg = new Image();
@@ -658,84 +704,56 @@
       });
     }
 
-    // Dọn dẹp danh sách hình ảnh đã trích xuất và thu hồi Blob URL để giải phóng bộ nhớ RAM
-    function clearExtractedImages() {
-      if (allDocxImages) {
-        allDocxImages.forEach(img => {
-          if (img.url) {
-            URL.revokeObjectURL(img.url);
-          }
-        });
-        allDocxImages = [];
-      }
-      extractedImages.forEach(img => {
-        if (img.url) {
-          URL.revokeObjectURL(img.url);
-        }
-      });
-      extractedImages = [];
-      activePdfDoc = null;
-      activeZip = null;
-      const paginationContainer = document.getElementById('pagination-container');
-      if (paginationContainer) {
-        paginationContainer.style.display = 'none';
-      }
-    }
+    // Hiển thị trạng thái thông báo
+    function showStatus(message, isError = false, showProgress = false, percent = 0) {
+      statusText.textContent = message;
+      statusMessage.style.display = 'block';
 
-    // Định dạng dung lượng file theo chuẩn Việt Nam (B hoặc KB không có số lẻ, MB có 1 chữ số lẻ)
-    function formatFileSize(size) {
-      if (size < 1024) {
-        return size.toLocaleString('vi-VN') + ' B';
-      } else if (size < 1024 * 1024) {
-        return Math.round(size / 1024).toLocaleString('vi-VN') + ' KB';
+      if (showProgress) {
+        progressContainer.style.display = 'block';
+        progressBar.style.width = Math.min(Math.max(percent, 0), 100) + '%';
       } else {
-        return (size / (1024 * 1024)).toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' MB';
+        progressContainer.style.display = 'none';
+      }
+
+      if (isError) {
+        statusMessage.style.borderColor = '#ef4444';
+        statusMessage.style.backgroundColor = '#fef2f2';
+        statusMessage.style.color = '#991b1b';
+      } else {
+        statusMessage.style.borderColor = '#cbd5e1';
+        statusMessage.style.backgroundColor = '#f1f5f9';
+        statusMessage.style.color = '#0f172a';
       }
     }
 
-    // Cập nhật dung lượng của riêng trang hiện tại
-    function updateCurrentPageSizeInfo() {
-      const btnDownloadCurrentText = document.getElementById('btn-download-current-text');
-      if (!btnDownloadCurrentText) return;
+    // Xoá toàn bộ tài nguyên hình ảnh cũ để giải phóng RAM
+    function clearExtractedImages() {
+      rawDocxImages.forEach(img => {
+        if (img.url) URL.revokeObjectURL(img.url);
+      });
+      rawDocxImages = [];
 
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, extractedImages.length);
+      rawPdfImages.forEach(img => {
+        if (img.url) URL.revokeObjectURL(img.url);
+      });
+      rawPdfImages = [];
 
-      let currentSize = 0;
-      for (let i = startIndex; i < endIndex; i++) {
-        if (extractedImages[i].blob) {
-          currentSize += extractedImages[i].blob.size;
-        } else if (currentFileType === 'docx' && extractedImages[i].uncompressedSize) {
-          currentSize += extractedImages[i].uncompressedSize;
-        }
-      }
+      filteredImages.forEach(img => {
+        if (img.url && !img.isPersistentUrl) URL.revokeObjectURL(img.url);
+      });
+      filteredImages = [];
 
-      const sizeText = formatFileSize(currentSize);
-      btnDownloadCurrentText.textContent = `Tải xuống trang hiện tại (.zip) - ${sizeText}`;
+      activePdfDoc = null;
+      activePdfBuffer = null;
+      imageGrid.innerHTML = '';
+      downloadAllContainer.style.display = 'none';
+      document.getElementById('pagination-container').style.display = 'none';
     }
 
-    // Cập nhật dung lượng ước tính của file ZIP chứa ảnh
-    function updateZipSizeInfo() {
-      const btnDownloadAllText = document.getElementById('btn-download-all-text');
-      if (btnDownloadAllText) {
-        if (currentFileType === 'docx' && extractedImages.length > 0) {
-          let totalSize = 0;
-          for (let i = 0; i < extractedImages.length; i++) {
-            totalSize += extractedImages[i].uncompressedSize || 0;
-          }
-          const sizeText = formatFileSize(totalSize);
-          btnDownloadAllText.textContent = `Tải xuống tất cả ảnh (.zip) - ${sizeText}`;
-        } else {
-          btnDownloadAllText.textContent = `Tải xuống tất cả ảnh (.zip)`;
-        }
-      }
-      updateCurrentPageSizeInfo();
-    }
-
-    // Kích hoạt chọn file khi click vào drop-zone
+    // Kéo thả & Chọn tệp
     dropZone.addEventListener('click', () => fileInput.click());
 
-    // Xử lý sự kiện kéo thả file
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
       dropZone.classList.add('dragover');
@@ -748,21 +766,17 @@
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
       dropZone.classList.remove('dragover');
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        validateAndProcessFile(files[0]);
+      if (e.dataTransfer.files.length > 0) {
+        validateAndProcessFile(e.dataTransfer.files[0]);
       }
     });
 
-    // Xử lý sự kiện chọn file thủ công
     fileInput.addEventListener('change', (e) => {
-      const files = e.target.files;
-      if (files.length > 0) {
-        validateAndProcessFile(files[0]);
+      if (e.target.files.length > 0) {
+        validateAndProcessFile(e.target.files[0]);
       }
     });
 
-    // Xử lý sự kiện dán file (Ctrl + V)
     document.addEventListener('paste', (e) => {
       const items = (e.clipboardData || e.originalEvent.clipboardData).items;
       for (let i = 0; i < items.length; i++) {
@@ -776,12 +790,34 @@
       }
     });
 
-    // Kiểm tra định dạng file và xử lý
+    // Chuyển đổi phương thức xử lý PDF (Lấy ảnh gốc / Chụp cả trang)
+    pdfMethod.addEventListener('change', () => {
+      if (pdfMethod.value === 'page') {
+        pdfPageOptions.style.display = 'flex';
+      } else {
+        pdfPageOptions.style.display = 'none';
+      }
+      if (activePdfDoc) {
+        runPdfExtraction();
+      }
+    });
+
+    // Lắng nghe phím Enter trong các ô nhập cấu hình PDF
+    [pdfPageRangeInput, pdfQualityInput, pdfMinWidth, pdfMinHeight].forEach(inputEl => {
+      if (inputEl) {
+        inputEl.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            runPdfExtraction();
+          }
+        });
+      }
+    });
+
+    // Kiểm tra định dạng tệp
     function validateAndProcessFile(file) {
-      const isDocx = file.name.endsWith('.docx') ||
-        file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-      const isPdf = file.name.endsWith('.pdf') ||
-        file.type === 'application/pdf';
+      const isDocx = file.name.endsWith('.docx') || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      const isPdf = file.name.endsWith('.pdf') || file.type === 'application/pdf';
 
       if (!isDocx && !isPdf) {
         showStatus('Lỗi: Chỉ chấp nhận tệp tin có định dạng .docx hoặc .pdf', true);
@@ -790,57 +826,40 @@
 
       currentFile = file;
       currentFileType = isDocx ? 'docx' : 'pdf';
-      pdfPageRangeInput.value = ''; // Reset ô nhập trang
+      baseName = file.name.substring(0, file.name.lastIndexOf('.')) || 'images';
 
       if (isDocx) {
         pdfConfigContainer.style.display = 'none';
         docxConfigContainer.style.display = 'flex';
-        if (docxMinWidth) docxMinWidth.value = 100;
-        if (docxMinHeight) docxMinHeight.value = 100;
+        docxMinWidth.value = 100;
+        docxMinHeight.value = 100;
         processDocxFile(file);
       } else {
-        pdfConfigContainer.style.display = 'flex';
         docxConfigContainer.style.display = 'none';
-        pdfZoomSelect.value = '4'; // Đặt lại mặc định là 4x khi tải tệp PDF mới
-        pdfQualityInput.value = '93'; // Đặt lại mặc định chất lượng là 93% khi tải tệp PDF mới
+        pdfConfigContainer.style.display = 'flex';
+        if (pdfMethod.value === 'page') {
+          pdfPageOptions.style.display = 'flex';
+        } else {
+          pdfPageOptions.style.display = 'none';
+        }
+        pdfMinWidth.value = 100;
+        pdfMinHeight.value = 100;
         processPdfFile(file);
       }
     }
 
-    // Hiển thị trạng thái thông báo
-    function showStatus(message, isError = false) {
-      statusMessage.textContent = message;
-      statusMessage.style.display = 'block';
-      if (isError) {
-        statusMessage.style.borderColor = '#ef4444';
-        statusMessage.style.backgroundColor = '#fef2f2';
-        statusMessage.style.color = '#991b1b';
-      } else {
-        statusMessage.style.borderColor = '#cbd5e1';
-        statusMessage.style.backgroundColor = '#f1f5f9';
-        statusMessage.style.color = '#0f172a';
-      }
-    }
-
-    // Đọc và phân tích file DOCX
+    // ==========================================
+    // XỬ LÝ FILE DOCX
+    // ==========================================
     function processDocxFile(file) {
-      imageGrid.innerHTML = '';
-      downloadAllContainer.style.display = 'none';
       clearExtractedImages();
-      showStatus('Đang đọc cấu trúc file "' + file.name + '"...');
+      showStatus('Đang mở file DOCX "' + file.name + '"...');
 
       const reader = new FileReader();
-
       reader.onload = function (e) {
         const arrayBuffer = e.target.result;
-
-        // Load file zip bằng JSZip
         JSZip.loadAsync(arrayBuffer).then(async (zip) => {
-          activeZip = zip;
-          baseName = file.name.substring(0, file.name.lastIndexOf('.')) || 'images';
           const mediaFiles = [];
-
-          // Lọc các file nằm trong thư mục word/media/
           zip.forEach((relativePath, zipEntry) => {
             if (relativePath.startsWith('word/media/') && !zipEntry.dir) {
               mediaFiles.push(zipEntry);
@@ -848,221 +867,333 @@
           });
 
           if (mediaFiles.length === 0) {
-            showStatus('Không tìm thấy hình ảnh nào trong tài liệu "' + file.name + '".');
+            showStatus('Không tìm thấy hình ảnh nào trong tài liệu DOCX này.');
             return;
           }
 
-          showStatus(`Tìm thấy ${mediaFiles.length} hình ảnh. Đang giải nén và nạp kích thước...`);
+          showStatus(`Đang trích xuất ${mediaFiles.length} hình ảnh từ file DOCX...`, false, true, 0);
 
-          allDocxImages = [];
+          rawDocxImages = [];
           for (let i = 0; i < mediaFiles.length; i++) {
             const zipEntry = mediaFiles[i];
-            showStatus(`Đang đọc kích thước ảnh ${i + 1}/${mediaFiles.length}...`);
+            const percent = Math.round(((i + 1) / mediaFiles.length) * 100);
+            showStatus(`Đang giải nén ảnh ${i + 1}/${mediaFiles.length}...`, false, true, percent);
 
-            let size = 0;
-            if (zipEntry._data && typeof zipEntry._data.uncompressedSize !== 'undefined') {
-              size = zipEntry._data.uncompressedSize;
-            } else if (zipEntry.uncompressedSize) {
-              size = zipEntry.uncompressedSize;
-            }
+            let uncompressedSize = zipEntry._data && typeof zipEntry._data.uncompressedSize !== 'undefined'
+              ? zipEntry._data.uncompressedSize : (zipEntry.uncompressedSize || 0);
 
             const originalName = zipEntry.name.split('/').pop();
-            const extension = zipEntry.name.split('.').pop().toLowerCase() || 'png';
-
-            let width = 0;
-            let height = 0;
-            let blob = null;
-            let url = null;
+            const extension = originalName.split('.').pop().toLowerCase() || 'png';
 
             try {
-              blob = await zipEntry.async('blob');
-              url = URL.createObjectURL(blob);
+              const blob = await zipEntry.async('blob');
+              const url = URL.createObjectURL(blob);
               const dimensions = await getImageDimensions(url);
-              width = dimensions.width;
-              height = dimensions.height;
-            } catch (err) {
-              console.error('Error loading image dimensions for ' + originalName, err);
-            }
 
-            allDocxImages.push({
-              name: originalName,
-              extension: extension,
-              zipEntry: zipEntry,
-              size: size,
-              width: width,
-              height: height,
-              blob: blob,
-              url: url
-            });
+              rawDocxImages.push({
+                originalName: originalName,
+                extension: extension,
+                blob: blob,
+                url: url,
+                isPersistentUrl: true,
+                width: dimensions.width,
+                height: dimensions.height,
+                size: blob.size || uncompressedSize
+              });
+            } catch (err) {
+              console.error('Lỗi khi nạp ảnh DOCX: ' + originalName, err);
+            }
           }
 
           applyDocxFilters();
-
         }).catch((err) => {
           console.error(err);
-          showStatus('Đã xảy ra lỗi khi giải nén tệp tin .docx. Vui lòng kiểm tra lại tính hợp lệ của tệp.', true);
+          showStatus('Đã xảy ra lỗi khi giải nén tệp tin .docx. Vui lòng kiểm tra lại tệp.', true);
         });
       };
-
-      reader.onerror = function () {
-        showStatus('Lỗi khi đọc tệp tin từ thiết bị.', true);
-      };
-
       reader.readAsArrayBuffer(file);
     }
 
     function applyDocxFilters() {
-      if (!allDocxImages || allDocxImages.length === 0) return;
+      if (rawDocxImages.length === 0) return;
 
-      const minWidthInput = document.getElementById('docx-min-width');
-      const minHeightInput = document.getElementById('docx-min-height');
+      const minW = parseInt(docxMinWidth.value) || 0;
+      const minH = parseInt(docxMinHeight.value) || 0;
 
-      const minWidth = minWidthInput ? parseInt(minWidthInput.value) || 0 : 100;
-      const minHeight = minHeightInput ? parseInt(minHeightInput.value) || 0 : 100;
+      const rawFiltered = rawDocxImages.filter(img => img.width >= minW && img.height >= minH);
+      const padLength = String(rawFiltered.length).length;
 
-      const filtered = allDocxImages.filter(img => img.width >= minWidth && img.height >= minHeight);
-
-      extractedImages = [];
-      const padLength = String(filtered.length).length;
-
-      filtered.forEach((imgItem, index) => {
-        const pageString = String(index + 1).padStart(padLength, '0');
-        const prefix = baseName ? `${baseName} ` : '';
-        const newFileName = `${prefix}trang_${pageString}.${imgItem.extension}`;
-        const displayName = pageString;
-
-        extractedImages.push({
-          name: newFileName,
-          displayName: displayName,
-          zipEntry: imgItem.zipEntry,
-          blob: imgItem.blob,
-          url: imgItem.url,
-          width: imgItem.width,
-          height: imgItem.height,
-          uncompressedSize: imgItem.size,
-          extension: imgItem.extension
-        });
+      filteredImages = rawFiltered.map((img, index) => {
+        const numStr = String(index + 1).padStart(padLength, '0');
+        const fileName = `${baseName} trang_${numStr}.${img.extension}`;
+        return {
+          id: 'docx_' + index,
+          name: fileName,
+          displayName: numStr,
+          width: img.width,
+          height: img.height,
+          size: img.size,
+          extension: img.extension,
+          blob: img.blob,
+          url: img.url,
+          isPersistentUrl: true
+        };
       });
 
-      const skippedCount = allDocxImages.length - filtered.length;
-      let successMsg = 'Phân tích thành công ' + filtered.length.toLocaleString('vi-VN') + ' hình ảnh từ file "' + currentFile.name + '"';
-      if (skippedCount > 0) {
-        successMsg += ' (đã lọc bỏ ' + skippedCount.toLocaleString('vi-VN') + ' hình ảnh nhỏ hơn kích thước cấu hình).';
-      } else {
-        successMsg += '.';
-      }
-      showStatus(successMsg);
+      const skipped = rawDocxImages.length - rawFiltered.length;
+      let msg = `Đã tìm thấy ${filteredImages.length.toLocaleString('vi-VN')} hình ảnh từ file DOCX "${currentFile.name}"`;
+      if (skipped > 0) msg += ` (đã lọc bỏ ${skipped.toLocaleString('vi-VN')} ảnh nhỏ).`;
+      showStatus(msg);
 
       downloadAllContainer.style.display = 'flex';
       currentPage = 1;
-      displayPage(currentPage);
+      renderPage(currentPage);
       updateZipSizeInfo();
     }
 
-    // Đọc và phân tích file PDF (Chuyển PDF thành hình ảnh)
+    btnApplyDocx.addEventListener('click', applyDocxFilters);
+
+    // ==========================================
+    // XỬ LÝ FILE PDF
+    // ==========================================
     function processPdfFile(file) {
       if (!window.pdfjsLib) {
-        showStatus('Lỗi: Thư viện PDF.js chưa được tải thành công. Vui lòng kiểm tra lại kết nối mạng hoặc tệp tin js/pdf.min.js cục bộ.', true);
+        showStatus('Lỗi: Thư viện PDF.js chưa được tải thành công.', true);
         return;
       }
 
-      // Cấu hình đường dẫn worker cho PDF.js động tùy thuộc vào nguồn tải thư viện
       if (window.isPdfjsCdnLoaded) {
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
       } else {
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
       }
 
-      imageGrid.innerHTML = '';
-      downloadAllContainer.style.display = 'none';
       clearExtractedImages();
+      showStatus('Đang mở file PDF "' + file.name + '"...');
 
-      showStatus('Đang nạp file PDF "' + file.name + '"...');
-
-      // Khởi chạy quá trình đọc file
       const reader = new FileReader();
-
       reader.onload = function (e) {
-        const arrayBuffer = e.target.result;
-
-        // Vô hiệu hoá nút Áp dụng và thông báo tiến trình đang tạo ảnh từ PDF
-        btnApplyPages.disabled = true;
-        btnApplyPages.textContent = 'Đang tạo...';
-
-        pdfjsLib.getDocument({ data: arrayBuffer }).promise.then(async (pdf) => {
-          // Cập nhật nhãn hiển thị gợi ý trang
-          const configTitle = document.getElementById('pdf-config-title');
-          configTitle.textContent = `Chọn trang (Tổng số: ${pdf.numPages}):`;
-
-          try {
-            const rangeStr = pdfPageRangeInput.value;
-            const pagesToRender = parsePageRange(rangeStr, pdf.numPages);
-            const zoomScale = parseFloat(pdfZoomSelect.value) || 4.0;
-            const qualityPercent = parseInt(pdfQualityInput.value) || 93;
-            const qualityScale = Math.min(Math.max(qualityPercent, 1), 100) / 100;
-
-            if (pagesToRender.length === 0) {
-              showStatus('Lỗi: Không có trang hợp lệ nào được chọn để chuyển đổi.', true);
-              btnApplyPages.disabled = false;
-              btnApplyPages.textContent = 'Áp dụng';
-              return;
-            }
-
-            activePdfDoc = pdf;
-            pdfZoomScale = zoomScale;
-            pdfQualityScale = qualityScale;
-            baseName = file.name.substring(0, file.name.lastIndexOf('.')) || 'images';
-
-            showStatus('Đang nạp ' + pagesToRender.length.toLocaleString('vi-VN') + ' trang từ file PDF "' + file.name + '"...');
-
-            const padLength = String(pdf.numPages).length;
-            extractedImages = pagesToRender.map((pageNo) => {
-              const pageString = String(pageNo).padStart(padLength, '0');
-              const prefix = baseName ? `${baseName} ` : '';
-              const fileName = `${prefix}trang_${pageString}.jpg`;
-              return {
-                name: fileName,
-                displayName: pageString,
-                pageNo: pageNo,
-                blob: null,
-                url: null,
-                width: 0,
-                height: 0
-              };
-            });
-
-            showStatus('Nạp thành công. Đang hiển thị trang...');
-            downloadAllContainer.style.display = 'flex';
-            currentPage = 1;
-            displayPage(currentPage);
-            updateZipSizeInfo();
-
-          } catch (err) {
-            console.error(err);
-            showStatus('Đã xảy ra lỗi khi chuyển đổi PDF thành hình ảnh: ' + err.message, true);
-          } finally {
-            btnApplyPages.disabled = false;
-            btnApplyPages.textContent = 'Áp dụng';
-          }
+        activePdfBuffer = e.target.result;
+        pdfjsLib.getDocument({ data: activePdfBuffer }).promise.then((pdf) => {
+          activePdfDoc = pdf;
+          runPdfExtraction();
         }).catch((err) => {
           console.error(err);
-          showStatus('Đã xảy ra lỗi khi đọc file PDF. Có thể file đã bị khoá hoặc bị lỗi cấu trúc.', true);
-          btnApplyPages.disabled = false;
-          btnApplyPages.textContent = 'Áp dụng';
+          showStatus('Đã xảy ra lỗi khi nạp file PDF. Vui lòng kiểm tra lại tệp.', true);
         });
       };
-
-      reader.onerror = function () {
-        showStatus('Lỗi khi đọc tệp tin từ thiết bị.', true);
-      };
-
       reader.readAsArrayBuffer(file);
     }
 
-    // Phân tích chuỗi số trang được chọn (ví dụ: 1, 3, 5-8)
+    function runPdfExtraction() {
+      if (!activePdfDoc) return;
+
+      const method = pdfMethod.value;
+      if (method === 'raw') {
+        extractPdfRawImages();
+      } else {
+        extractPdfPageImages();
+      }
+    }
+
+    btnApplyPdf.addEventListener('click', runPdfExtraction);
+
+    // Chế độ 1: Trích xuất ảnh gốc từ PDF (Raw Images Extraction)
+    async function extractPdfRawImages() {
+      const numPages = activePdfDoc.numPages;
+      showStatus(`Đang phân tích cấu trúc để trích xuất ảnh gốc từ ${numPages} trang PDF...`, false, true, 0);
+
+      rawPdfImages = [];
+      let totalExtracted = 0;
+
+      try {
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+          const percent = Math.round((pageNum / numPages) * 100);
+          showStatus(`Đang quét ảnh gốc trang ${pageNum}/${numPages} (${percent}%)... Đã tìm thấy ${totalExtracted} ảnh.`, false, true, percent);
+
+          const page = await activePdfDoc.getPage(pageNum);
+          const operatorList = await page.getOperatorList();
+          const OPS = window.pdfjsLib.OPS || {};
+
+          for (let i = 0; i < operatorList.fnArray.length; i++) {
+            const op = operatorList.fnArray[i];
+
+            if (
+              op === OPS.paintImageXObject ||
+              op === OPS.paintImageXObjectRepeat ||
+              op === OPS.paintJpegXObject ||
+              op === OPS.paintInlineImageXObject
+            ) {
+              const imgName = operatorList.argsArray[i][0];
+              const imgObj = await getPdfImageObject(page, imgName);
+
+              if (imgObj) {
+                const processed = await processPdfImageObject(imgObj, pageNum, totalExtracted + 1);
+                if (processed) {
+                  totalExtracted++;
+                  rawPdfImages.push(processed);
+                }
+              }
+            }
+          }
+        }
+
+        applyPdfFilters(rawPdfImages, 'gốc');
+      } catch (err) {
+        console.error(err);
+        showStatus('Lỗi khi trích xuất ảnh gốc PDF: ' + err.message, true);
+      }
+    }
+
+    function getPdfImageObject(page, imgName) {
+      return new Promise((resolve) => {
+        if (!imgName) return resolve(null);
+        if (page.objs && page.objs.has && page.objs.has(imgName)) {
+          resolve(page.objs.get(imgName));
+        } else if (page.commonObjs && page.commonObjs.has && page.commonObjs.has(imgName)) {
+          resolve(page.commonObjs.get(imgName));
+        } else if (page.objs && page.objs.get) {
+          page.objs.get(imgName, (obj) => resolve(obj));
+        } else {
+          resolve(null);
+        }
+      });
+    }
+
+    async function processPdfImageObject(imgObj, pageNum, imgIndex) {
+      const width = imgObj.width;
+      const height = imgObj.height;
+      if (!width || !height) return null;
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+
+      if (imgObj.bitmap) {
+        ctx.drawImage(imgObj.bitmap, 0, 0);
+      } else if (imgObj.data) {
+        const src = imgObj.data;
+        const totalPixels = width * height;
+        const imageData = ctx.createImageData(width, height);
+        const rgba = imageData.data;
+        const smaskData = imgObj.smask ? imgObj.smask.data : null;
+
+        const is1Bit = imgObj.kind === window.pdfjsLib.ImageKind.GRAYSCALE_1BPP || (src.length * 8 === totalPixels);
+        const isCmyk = src.length === totalPixels * 4 && imgObj.kind !== window.pdfjsLib.ImageKind.RGBA_32BPP;
+        const isRgb = src.length === totalPixels * 3;
+        const isRgba = src.length === totalPixels * 4 && imgObj.kind === window.pdfjsLib.ImageKind.RGBA_32BPP;
+        const isGrayscale = src.length === totalPixels;
+
+        if (isRgba) {
+          rgba.set(src);
+          if (smaskData) {
+            for (let i = 0; i < totalPixels; i++) rgba[4 * i + 3] = smaskData[i];
+          }
+        } else if (isRgb) {
+          for (let i = 0; i < totalPixels; i++) {
+            rgba[4 * i] = src[3 * i];
+            rgba[4 * i + 1] = src[3 * i + 1];
+            rgba[4 * i + 2] = src[3 * i + 2];
+            rgba[4 * i + 3] = smaskData ? smaskData[i] : 255;
+          }
+        } else if (isCmyk) {
+          for (let i = 0; i < totalPixels; i++) {
+            const c = src[4 * i] / 255;
+            const m = src[4 * i + 1] / 255;
+            const y = src[4 * i + 2] / 255;
+            const k = src[4 * i + 3] / 255;
+            rgba[4 * i] = Math.round(255 * (1 - c) * (1 - k));
+            rgba[4 * i + 1] = Math.round(255 * (1 - m) * (1 - k));
+            rgba[4 * i + 2] = Math.round(255 * (1 - y) * (1 - k));
+            rgba[4 * i + 3] = 255;
+          }
+        } else if (isGrayscale) {
+          for (let i = 0; i < totalPixels; i++) {
+            const val = src[i];
+            rgba[4 * i] = val;
+            rgba[4 * i + 1] = val;
+            rgba[4 * i + 2] = val;
+            rgba[4 * i + 3] = smaskData ? smaskData[i] : 255;
+          }
+        } else if (is1Bit) {
+          for (let i = 0; i < totalPixels; i++) {
+            const byteIdx = Math.floor(i / 8);
+            const bitIdx = 7 - (i % 8);
+            const bit = (src[byteIdx] >> bitIdx) & 1;
+            let val = bit ? 255 : 0;
+            if (imgObj.decode && imgObj.decode[0] === 1) val = 255 - val;
+            rgba[4 * i] = val;
+            rgba[4 * i + 1] = val;
+            rgba[4 * i + 2] = val;
+            rgba[4 * i + 3] = 255;
+          }
+        } else {
+          for (let i = 0; i < totalPixels; i++) {
+            rgba[4 * i] = src[i] || 0;
+            rgba[4 * i + 1] = src[i + 1] || 0;
+            rgba[4 * i + 2] = src[i + 2] || 0;
+            rgba[4 * i + 3] = 255;
+          }
+        }
+
+        if (imgObj.decode && imgObj.decode.length >= 2 && imgObj.decode[0] > imgObj.decode[1]) {
+          for (let i = 0; i < totalPixels; i++) {
+            rgba[4 * i] = 255 - rgba[4 * i];
+            rgba[4 * i + 1] = 255 - rgba[4 * i + 1];
+            rgba[4 * i + 2] = 255 - rgba[4 * i + 2];
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+      }
+
+      const blob = await new Promise((resolve) => {
+        canvas.toBlob((b) => resolve(b), 'image/png');
+      });
+
+      const url = URL.createObjectURL(blob);
+
+      return {
+        pageNum: pageNum,
+        imgIndex: imgIndex,
+        extension: 'png',
+        blob: blob,
+        url: url,
+        width: width,
+        height: height,
+        size: blob.size
+      };
+    }
+
+    // Chế độ 2: Chụp cả trang PDF (Full Page Rendering)
+    async function extractPdfPageImages() {
+      const rangeStr = pdfPageRangeInput.value;
+      const pagesToRender = parsePageRange(rangeStr, activePdfDoc.numPages);
+
+      if (pagesToRender.length === 0) {
+        showStatus('Lỗi: Không có trang hợp lệ nào được chọn.', true);
+        return;
+      }
+
+      showStatus(`Đang chuẩn bị nạp ${pagesToRender.length} trang PDF...`, false, true, 0);
+
+      rawPdfImages = pagesToRender.map(pageNo => ({
+        isPageRender: true,
+        pageNo: pageNo,
+        extension: 'jpg',
+        blob: null,
+        url: null,
+        width: 0,
+        height: 0,
+        size: 0
+      }));
+
+      applyPdfFilters(rawPdfImages, 'trang');
+    }
+
     function parsePageRange(rangeStr, maxPages) {
       if (!rangeStr || !rangeStr.trim()) {
-        // Trả về tất cả các trang
         return Array.from({ length: maxPages }, (_, i) => i + 1);
       }
 
@@ -1080,9 +1211,7 @@
             const from = Math.min(start, end);
             const to = Math.max(start, end);
             for (let p = from; p <= to; p++) {
-              if (p >= 1 && p <= maxPages) {
-                pages.add(p);
-              }
+              if (p >= 1 && p <= maxPages) pages.add(p);
             }
           }
         } else {
@@ -1096,283 +1225,57 @@
       return Array.from(pages).sort((a, b) => a - b);
     }
 
-    // Hàm render trang PDF đơn lẻ bất đồng bộ (Lazy)
-    async function loadSinglePdfPage(img, index) {
-      try {
-        // Luôn đọc thông số mới nhất từ giao diện trước khi render
-        pdfZoomScale = parseFloat(pdfZoomSelect.value) || 4.0;
-        const qualityPercent = parseInt(pdfQualityInput.value) || 93;
-        pdfQualityScale = Math.min(Math.max(qualityPercent, 1), 100) / 100;
+    // Áp dụng bộ lọc kích thước cho PDF
+    function applyPdfFilters(rawList, modeLabel) {
+      const minW = parseInt(pdfMinWidth.value) || 0;
+      const minH = parseInt(pdfMinHeight.value) || 0;
 
-        const page = await activePdfDoc.getPage(img.pageNo);
-        const viewport = page.getViewport({ scale: pdfZoomScale });
-
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        const ctx = canvas.getContext('2d');
-
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        await page.render({
-          canvasContext: ctx,
-          viewport: viewport
-        }).promise;
-
-        const blob = await new Promise((resolve) => {
-          canvas.toBlob((b) => resolve(b), 'image/jpeg', pdfQualityScale);
-        });
-
-        img.blob = blob;
-        img.url = URL.createObjectURL(blob);
-        img.width = viewport.width;
-        img.height = viewport.height;
-
-        updateImageCardOnUI(img, index);
-      } catch (err) {
-        console.error(err);
-        showErrorOnCard(img, index);
-      }
-    }
-
-    // Hàm giải nén file ảnh DOCX đơn lẻ bất đồng bộ (Lazy)
-    async function loadSingleDocxPage(img, index) {
-      try {
-        const blob = await img.zipEntry.async('blob');
-        img.blob = blob;
-        img.url = URL.createObjectURL(blob);
-
-        const tempImg = new Image();
-        tempImg.onload = function () {
-          img.width = tempImg.naturalWidth;
-          img.height = tempImg.naturalHeight;
-          updateImageCardOnUI(img, index);
-        };
-        tempImg.onerror = function () {
-          img.width = 0;
-          img.height = 0;
-          updateImageCardOnUI(img, index, true);
-        };
-        tempImg.src = img.url;
-      } catch (err) {
-        console.error(err);
-        showErrorOnCard(img, index);
-      }
-    }
-
-    // Cập nhật giao diện card ảnh sau khi render/giải nén xong
-    function updateImageCardOnUI(img, index, isUnsupported = false) {
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, extractedImages.length);
-      if (index < startIndex || index >= endIndex) return;
-
-      const card = document.getElementById(`card-${index}`);
-      if (!card) return;
-
-      const wrapper = card.querySelector('.image-wrapper');
-      if (wrapper) {
-        wrapper.innerHTML = '';
-        if (isUnsupported || !img.url) {
-          wrapper.innerHTML = `
-            <div style="text-align: center; padding: 1rem; color: #94a3b8;">
-              <svg style="width: 3rem; height: 3rem; fill: currentColor; margin-bottom: 0.5rem;" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-2-4H7v-2h10v2zm0-4H7V9h10v2z"/>
-              </svg>
-              <div style="font-size: 0.9rem;">Không hỗ trợ xem trực tiếp</div>
-            </div>
-          `;
-        } else {
-          const domImg = document.createElement('img');
-          domImg.src = img.url;
-          domImg.alt = img.name;
-          wrapper.appendChild(domImg);
-        }
-      }
-
-      const metaEl = card.querySelector('.image-meta');
-      if (metaEl) {
-        const size = img.blob ? img.blob.size : (img.uncompressedSize || 0);
-        const sizeText = formatFileSize(size);
-        const ext = (img.name.split('.').pop() || 'IMG').toUpperCase();
-        const dimensionText = isUnsupported ? 'Không rõ' : (Math.round(img.width).toLocaleString('vi-VN') + ' x ' + Math.round(img.height).toLocaleString('vi-VN') + ' px');
-        metaEl.textContent = `Cỡ: ${dimensionText} / ${ext} / ${sizeText}`;
-      }
-
-      card.onclick = () => {
-        openDownloadModal(img.name, img.url, img.blob);
-      };
-
-      updateCurrentPageSizeInfo();
-    }
-
-    // Hiển thị lỗi render trên card
-    function showErrorOnCard(img, index) {
-      const card = document.getElementById(`card-${index}`);
-      if (!card) return;
-      const wrapper = card.querySelector('.image-wrapper');
-      if (wrapper) {
-        wrapper.innerHTML = `<div style="color: #ef4444; font-size: 0.9rem; text-align: center; padding: 1rem;">Lỗi tải ảnh</div>`;
-      }
-      const metaEl = card.querySelector('.image-meta');
-      if (metaEl) {
-        metaEl.textContent = 'Lỗi xử lý';
-      }
-    }
-
-    // Lấy Blob tạm thời hoặc từ cache của một phần tử phục vụ tạo ZIP
-    async function getBlobForImage(img) {
-      if (img.blob !== null) {
-        return img.blob;
-      }
-      if (currentFileType === 'pdf') {
-        // Luôn đọc thông số mới nhất từ giao diện trước khi render
-        pdfZoomScale = parseFloat(pdfZoomSelect.value) || 4.0;
-        const qualityPercent = parseInt(pdfQualityInput.value) || 93;
-        pdfQualityScale = Math.min(Math.max(qualityPercent, 1), 100) / 100;
-
-        const page = await activePdfDoc.getPage(img.pageNo);
-        const viewport = page.getViewport({ scale: pdfZoomScale });
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
-        return new Promise((resolve) => {
-          canvas.toBlob((b) => resolve(b), 'image/jpeg', pdfQualityScale);
-        });
-      } else if (currentFileType === 'docx') {
-        return await img.zipEntry.async('blob');
-      }
-      return null;
-    }
-
-    // Quản lý Modal tải xuống
-    function openDownloadModal(name, url, blob) {
-      currentDownloadFile = { name, url, blob };
-      modalMessage.textContent = 'Bạn có muốn tải xuống hình ảnh "' + name + '" này không?';
-      modalOverlay.classList.add('active');
-    }
-
-    // Đóng modal
-    function closeDownloadModal() {
-      modalOverlay.classList.remove('active');
-      currentDownloadFile = null;
-    }
-
-    btnCancel.addEventListener('click', closeDownloadModal);
-
-    btnConfirm.addEventListener('click', () => {
-      if (currentDownloadFile) {
-        const link = document.createElement('a');
-        link.href = currentDownloadFile.url || URL.createObjectURL(currentDownloadFile.blob);
-        link.download = currentDownloadFile.name;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-      closeDownloadModal();
-    });
-
-    // Đóng modal khi bấm ra ngoài vùng container của modal
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) {
-        closeDownloadModal();
-      }
-    });
-
-    // Sự kiện khi bấm Áp dụng bộ lọc chọn trang PDF
-    btnApplyPages.addEventListener('click', () => {
-      if (activePdfDoc && currentFileType === 'pdf') {
-        try {
-          btnApplyPages.disabled = true;
-          btnApplyPages.textContent = 'Đang xử lý...';
-
-          const rangeStr = pdfPageRangeInput.value;
-          const pagesToRender = parsePageRange(rangeStr, activePdfDoc.numPages);
-          const zoomScale = parseFloat(pdfZoomSelect.value) || 4.0;
-          const qualityPercent = parseInt(pdfQualityInput.value) || 93;
-          const qualityScale = Math.min(Math.max(qualityPercent, 1), 100) / 100;
-
-          if (pagesToRender.length === 0) {
-            showStatus('Lỗi: Không có trang hợp lệ nào được chọn để chuyển đổi.', true);
-            return;
-          }
-
-          // Cập nhật thông số toàn cục
-          pdfZoomScale = zoomScale;
-          pdfQualityScale = qualityScale;
-
-          // Giải phóng toàn bộ ảnh cũ trước khi tạo danh sách trang mới
-          clearExtractedImages();
-
-          const padLength = String(activePdfDoc.numPages).length;
-          extractedImages = pagesToRender.map((pageNo) => {
-            const pageString = String(pageNo).padStart(padLength, '0');
-            const prefix = baseName ? `${baseName} ` : '';
-            const fileName = `${prefix}trang_${pageString}.jpg`;
-            return {
-              name: fileName,
-              displayName: pageString,
-              pageNo: pageNo,
-              blob: null,
-              url: null,
-              width: 0,
-              height: 0
-            };
-          });
-
-          showStatus('Đã áp dụng thông số mới và bộ lọc trang.');
-          currentPage = 1;
-          displayPage(currentPage);
-          updateZipSizeInfo();
-        } catch (err) {
-          console.error(err);
-          showStatus('Đã xảy ra lỗi khi áp dụng cấu hình: ' + err.message, true);
-        } finally {
-          btnApplyPages.disabled = false;
-          btnApplyPages.textContent = 'Áp dụng';
-        }
-      } else if (currentFile && currentFileType === 'pdf') {
-        // Fallback phòng trường hợp chưa nạp tài liệu
-        processPdfFile(currentFile);
-      }
-    });
-
-    // Sự kiện khi bấm Áp dụng bộ lọc kích thước DOCX
-    if (btnApplyDocx) {
-      btnApplyDocx.addEventListener('click', () => {
-        if (currentFile && currentFileType === 'docx') {
-          applyDocxFilters();
-        }
+      const rawFiltered = rawList.filter(img => {
+        if (img.isPageRender) return true; // Với chụp trang sẽ tính kích thước sau khi render
+        return img.width >= minW && img.height >= minH;
       });
+
+      const padLength = String(rawFiltered.length).length;
+
+      filteredImages = rawFiltered.map((img, index) => {
+        const numStr = String(index + 1).padStart(padLength, '0');
+        const fileName = `${baseName} trang_${numStr}.${img.extension}`;
+        return {
+          id: 'pdf_' + index,
+          name: fileName,
+          displayName: numStr,
+          width: img.width,
+          height: img.height,
+          size: img.size,
+          extension: img.extension,
+          blob: img.blob,
+          url: img.url,
+          isPageRender: img.isPageRender,
+          pageNo: img.pageNo
+        };
+      });
+
+      const skipped = rawList.length - rawFiltered.length;
+      let msg = `Đã tìm thấy ${filteredImages.length.toLocaleString('vi-VN')} hình ảnh (${modeLabel}) từ file PDF "${currentFile.name}"`;
+      if (skipped > 0) msg += ` (đã lọc bỏ ${skipped.toLocaleString('vi-VN')} ảnh nhỏ).`;
+      showStatus(msg);
+
+      downloadAllContainer.style.display = 'flex';
+      currentPage = 1;
+      renderPage(currentPage);
+      updateZipSizeInfo();
     }
 
-    // Hiển thị các hình ảnh của trang hiện tại lên lưới
-    function displayPage(page) {
+    // ==========================================
+    // HIỂN THỊ DÙNG CHUNG (SHARED CARD & GRID RENDERER)
+    // ==========================================
+    function renderPage(page) {
       imageGrid.innerHTML = '';
       const startIndex = (page - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, extractedImages.length);
+      const endIndex = Math.min(startIndex + itemsPerPage, filteredImages.length);
 
-      // Giải phóng Object URL của các trang khác ngoài dải hiển thị hiện hành để giải phóng RAM triệt để
-      for (let i = 0; i < extractedImages.length; i++) {
-        if (i < startIndex || i >= endIndex) {
-          const img = extractedImages[i];
-          if (img.url) {
-            URL.revokeObjectURL(img.url);
-            img.url = null;
-            img.blob = null;
-            img.width = 0;
-            img.height = 0;
-          }
-        }
-      }
-
-      // Tạo khung card (placeholder) cho các trang hiển thị
       for (let i = startIndex; i < endIndex; i++) {
-        const img = extractedImages[i];
+        const img = filteredImages[i];
 
         const card = document.createElement('div');
         card.className = 'image-card';
@@ -1381,9 +1284,9 @@
         const wrapper = document.createElement('div');
         wrapper.className = 'image-wrapper';
         wrapper.innerHTML = `
-          <div style="text-align: center; padding: 1rem; color: var(--text-muted);">
+          <div style="text-align: center; color: var(--text-muted);">
             <div style="display: inline-block; width: 1.5rem; height: 1.5rem; border: 2px solid var(--border-color); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 0.5rem;"></div>
-            <div style="font-size: 0.9rem;">Đang tải...</div>
+            <div style="font-size: 0.9rem;">Đang nạp...</div>
           </div>
         `;
 
@@ -1404,15 +1307,11 @@
         card.appendChild(info);
         imageGrid.appendChild(card);
 
-        // Kích hoạt render/giải nén bất đồng bộ
-        if (img.blob !== null) {
+        // Nạp ảnh nếu sẵn có hoặc gọi lazy rendering nếu là chụp trang PDF
+        if (img.url !== null) {
           updateImageCardOnUI(img, i);
-        } else {
-          if (currentFileType === 'pdf') {
-            loadSinglePdfPage(img, i);
-          } else if (currentFileType === 'docx') {
-            loadSingleDocxPage(img, i);
-          }
+        } else if (img.isPageRender) {
+          loadSinglePdfPageRender(img, i);
         }
       }
 
@@ -1420,7 +1319,139 @@
       updateCurrentPageSizeInfo();
     }
 
-    // Cập nhật trạng thái hiển thị của thanh phân trang
+    // Đảm bảo trang PDF đã được render thành Blob/URL
+    async function ensurePdfPageRendered(img) {
+      if (img.blob && img.url) return img;
+
+      const zoomScale = parseFloat(pdfZoomSelect.value) || 4.0;
+      const qualityPercent = parseInt(pdfQualityInput.value) || 93;
+      const qualityScale = Math.min(Math.max(qualityPercent, 1), 100) / 100;
+
+      const page = await activePdfDoc.getPage(img.pageNo);
+      const viewport = page.getViewport({ scale: zoomScale });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+      const blob = await new Promise((resolve) => {
+        canvas.toBlob((b) => resolve(b), 'image/jpeg', qualityScale);
+      });
+
+      img.blob = blob;
+      img.url = URL.createObjectURL(blob);
+      img.width = viewport.width;
+      img.height = viewport.height;
+      img.size = blob.size;
+
+      return img;
+    }
+
+    // Lazy load chụp 1 trang PDF
+    async function loadSinglePdfPageRender(img, index) {
+      try {
+        await ensurePdfPageRendered(img);
+
+        // Áp dụng bộ lọc kích thước sau khi đã render trang
+        const minW = parseInt(pdfMinWidth.value) || 0;
+        const minH = parseInt(pdfMinHeight.value) || 0;
+
+        if (img.width < minW || img.height < minH) {
+          showFilteredOutCard(index);
+        } else {
+          updateImageCardOnUI(img, index);
+        }
+      } catch (err) {
+        console.error(err);
+        showErrorOnCard(index);
+      }
+    }
+
+    function updateImageCardOnUI(img, index) {
+      const card = document.getElementById(`card-${index}`);
+      if (!card) return;
+
+      const wrapper = card.querySelector('.image-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = '';
+        const domImg = document.createElement('img');
+        domImg.src = img.url;
+        domImg.alt = img.name;
+        wrapper.appendChild(domImg);
+      }
+
+      const metaEl = card.querySelector('.image-meta');
+      if (metaEl) {
+        const sizeText = formatFileSize(img.size);
+        const ext = img.extension.toUpperCase();
+        metaEl.textContent = `Cỡ: ${Math.round(img.width)} x ${Math.round(img.height)} px / ${ext} / ${sizeText}`;
+      }
+
+      card.onclick = () => openDownloadModal(img);
+      updateZipSizeInfo();
+    }
+
+    function showFilteredOutCard(index) {
+      const card = document.getElementById(`card-${index}`);
+      if (!card) return;
+      card.style.opacity = '0.5';
+      const wrapper = card.querySelector('.image-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = `<div style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 1rem;">Nhỏ hơn kích thước tối thiểu</div>`;
+      }
+      const metaEl = card.querySelector('.image-meta');
+      if (metaEl) metaEl.textContent = 'Đã lọc bỏ';
+    }
+
+    function showErrorOnCard(index) {
+      const card = document.getElementById(`card-${index}`);
+      if (!card) return;
+      const wrapper = card.querySelector('.image-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = `<div style="color: #ef4444; font-size: 0.9rem; text-align: center; padding: 1rem;">Lỗi tải ảnh</div>`;
+      }
+      const metaEl = card.querySelector('.image-meta');
+      if (metaEl) metaEl.textContent = 'Lỗi xử lý';
+    }
+
+    // Modal
+    function openDownloadModal(img) {
+      currentDownloadItem = img;
+      modalHeader.textContent = img.name;
+      modalImg.src = img.url;
+      modalMessage.textContent = `Kích thước: ${Math.round(img.width)} x ${Math.round(img.height)} px | Dung lượng: ${formatFileSize(img.size)} | Định dạng: ${img.extension.toUpperCase()}`;
+      modalOverlay.classList.add('active');
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      currentDownloadItem = null;
+    }
+
+    btnCancel.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    btnConfirm.addEventListener('click', () => {
+      if (currentDownloadItem) {
+        const a = document.createElement('a');
+        a.href = currentDownloadItem.url;
+        a.download = currentDownloadItem.name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+      closeModal();
+    });
+
+    // Thanh phân trang
     function updatePagination() {
       const paginationContainer = document.getElementById('pagination-container');
       const btnFirst = document.getElementById('btn-page-first');
@@ -1430,7 +1461,7 @@
       const pageInfo = document.getElementById('page-info');
       const pageInput = document.getElementById('page-input');
 
-      const totalPages = Math.ceil(extractedImages.length / itemsPerPage);
+      const totalPages = Math.ceil(filteredImages.length / itemsPerPage);
 
       if (totalPages <= 1) {
         paginationContainer.style.display = 'none';
@@ -1438,13 +1469,9 @@
       }
 
       paginationContainer.style.display = 'flex';
-      if (pageInput) {
-        pageInput.value = currentPage;
-        pageInput.max = totalPages;
-      }
-      if (pageInfo) {
-        pageInfo.textContent = `/ ${totalPages}`;
-      }
+      pageInput.value = currentPage;
+      pageInput.max = totalPages;
+      pageInfo.textContent = `/ ${totalPages}`;
 
       btnFirst.disabled = currentPage === 1;
       btnPrev.disabled = currentPage === 1;
@@ -1452,72 +1479,149 @@
       btnLast.disabled = currentPage === totalPages;
     }
 
-    // Sự kiện tải xuống riêng trang hiện tại dưới dạng ZIP
-    btnDownloadCurrent.addEventListener('click', async () => {
-      if (extractedImages.length === 0) return;
+    document.getElementById('btn-page-first').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage = 1;
+        renderPage(currentPage);
+        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('btn-page-prev').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('btn-page-next').addEventListener('click', () => {
+      const totalPages = Math.ceil(filteredImages.length / itemsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPage(currentPage);
+        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('btn-page-last').addEventListener('click', () => {
+      const totalPages = Math.ceil(filteredImages.length / itemsPerPage);
+      if (currentPage < totalPages) {
+        currentPage = totalPages;
+        renderPage(currentPage);
+        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+
+    const pageInput = document.getElementById('page-input');
+    pageInput.addEventListener('change', () => {
+      const totalPages = Math.ceil(filteredImages.length / itemsPerPage);
+      let val = parseInt(pageInput.value, 10);
+      if (isNaN(val) || val < 1 || val > totalPages) {
+        pageInput.value = currentPage;
+        return;
+      }
+      if (val !== currentPage) {
+        currentPage = val;
+        renderPage(currentPage);
+        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+
+    // Dung lượng & Tải ZIP
+    function updateCurrentPageSizeInfo() {
+      const btnDownloadCurrentText = document.getElementById('btn-download-current-text');
+      if (!btnDownloadCurrentText) return;
 
       const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, extractedImages.length);
-      const currentGroup = extractedImages.slice(startIndex, endIndex);
+      const endIndex = Math.min(startIndex + itemsPerPage, filteredImages.length);
+
+      let currentSize = 0;
+      for (let i = startIndex; i < endIndex; i++) {
+        if (filteredImages[i].size) {
+          currentSize += filteredImages[i].size;
+        }
+      }
+
+      btnDownloadCurrentText.textContent = `Tải xuống trang hiện tại (.zip) - ${formatFileSize(currentSize)}`;
+    }
+
+    function updateZipSizeInfo() {
+      const btnDownloadAllText = document.getElementById('btn-download-all-text');
+      if (btnDownloadAllText) {
+        let totalSize = 0;
+        for (let i = 0; i < filteredImages.length; i++) {
+          totalSize += filteredImages[i].size || 0;
+        }
+        btnDownloadAllText.textContent = `Tải xuống tất cả ảnh (.zip) - ${formatFileSize(totalSize)}`;
+      }
+      updateCurrentPageSizeInfo();
+    }
+
+    // Tải xuống ZIP trang hiện tại
+    btnDownloadCurrent.addEventListener('click', async () => {
+      if (filteredImages.length === 0) return;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, filteredImages.length);
+      const currentGroup = filteredImages.slice(startIndex, endIndex);
 
       if (currentGroup.length === 0) return;
 
       btnDownloadCurrent.disabled = true;
       const btnDownloadCurrentText = document.getElementById('btn-download-current-text');
-      if (btnDownloadCurrentText) {
-        btnDownloadCurrentText.textContent = 'Đang nén ZIP trang hiện tại...';
-      }
+      if (btnDownloadCurrentText) btnDownloadCurrentText.textContent = 'Đang chuẩn bị trang hiện tại...';
 
       try {
         const zip = new JSZip();
-        for (const img of currentGroup) {
-          const blob = await getBlobForImage(img);
-          if (blob) {
-            zip.file(img.name, blob);
+        for (let idx = 0; idx < currentGroup.length; idx++) {
+          const img = currentGroup[idx];
+          if (btnDownloadCurrentText) {
+            btnDownloadCurrentText.textContent = `Đang xử lý trang ${idx + 1}/${currentGroup.length}...`;
+          }
+          if (img.isPageRender && !img.blob) {
+            await ensurePdfPageRendered(img);
+          }
+          if (img.blob) {
+            zip.file(img.name, img.blob);
           }
         }
 
-        const baseName = currentFile.name.substring(0, currentFile.name.lastIndexOf('.')) || 'images';
+        if (btnDownloadCurrentText) btnDownloadCurrentText.textContent = 'Đang nén ZIP trang hiện tại...';
         const content = await zip.generateAsync({ type: 'blob' });
-
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(content);
-        link.download = `${baseName}_images_trang_${startIndex + 1}_den_${endIndex}.zip`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(content);
+        a.download = `${baseName}_images_trang_${startIndex + 1}_den_${endIndex}.zip`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       } catch (err) {
         console.error(err);
-        alert('Đã xảy ra lỗi khi tạo file nén ZIP trang hiện tại.');
+        alert('Lỗi khi nén ZIP trang hiện tại.');
       } finally {
         btnDownloadCurrent.disabled = false;
         updateCurrentPageSizeInfo();
       }
     });
 
-    // Sự kiện tải xuống toàn bộ ảnh dưới dạng ZIP
+    // Tải xuống tất cả ZIP
     btnDownloadAll.addEventListener('click', () => {
-      if (extractedImages.length === 0) return;
+      if (filteredImages.length === 0) return;
 
-      // Chia nhóm hình ảnh để nén ZIP (Tối đa 30 ảnh mỗi file để đảm bảo hiệu năng trên trình duyệt)
       const zipGroups = [];
       let currentGroup = [];
 
-      extractedImages.forEach((img) => {
+      filteredImages.forEach((img) => {
         if (currentGroup.length >= 30) {
           zipGroups.push(currentGroup);
           currentGroup = [];
         }
         currentGroup.push(img);
       });
-
-      if (currentGroup.length > 0) {
-        zipGroups.push(currentGroup);
-      }
+      if (currentGroup.length > 0) zipGroups.push(currentGroup);
 
       btnDownloadAll.disabled = true;
       const btnDownloadAllText = document.getElementById('btn-download-all-text');
-      const baseName = currentFile.name.substring(0, currentFile.name.lastIndexOf('.')) || 'images';
       let groupIndex = 0;
 
       async function downloadNextGroup() {
@@ -1528,42 +1632,37 @@
         }
 
         const group = zipGroups[groupIndex];
-        if (btnDownloadAllText) {
-          btnDownloadAllText.textContent = `Đang chuẩn bị phần ${groupIndex + 1}/${zipGroups.length}...`;
-        }
+        if (btnDownloadAllText) btnDownloadAllText.textContent = `Đang chuẩn bị phần ${groupIndex + 1}/${zipGroups.length}...`;
 
         try {
           const zip = new JSZip();
-          let count = 0;
-          for (const img of group) {
-            count++;
+          for (let idx = 0; idx < group.length; idx++) {
+            const img = group[idx];
             if (btnDownloadAllText) {
-              btnDownloadAllText.textContent = `Đang chuẩn bị ảnh ${count}/${group.length} của phần ${groupIndex + 1}...`;
+              btnDownloadAllText.textContent = `Đang xử lý trang ${idx + 1}/${group.length} (Phần ${groupIndex + 1}/${zipGroups.length})...`;
             }
-            const blob = await getBlobForImage(img);
-            if (blob) {
-              zip.file(img.name, blob);
+            if (img.isPageRender && !img.blob) {
+              await ensurePdfPageRendered(img);
+            }
+            if (img.blob) {
+              zip.file(img.name, img.blob);
             }
           }
 
-          if (btnDownloadAllText) {
-            btnDownloadAllText.textContent = `Đang xuất file ZIP phần ${groupIndex + 1}...`;
-          }
-
+          if (btnDownloadAllText) btnDownloadAllText.textContent = `Đang nén phần ${groupIndex + 1}/${zipGroups.length}...`;
           const content = await zip.generateAsync({ type: 'blob' });
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(content);
-          link.download = zipGroups.length > 1 ? `${baseName}_images_part${groupIndex + 1}.zip` : `${baseName}_images.zip`;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(content);
+          a.download = zipGroups.length > 1 ? `${baseName}_images_part${groupIndex + 1}.zip` : `${baseName}_images.zip`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
 
           groupIndex++;
-          // Giãn cách 1,2 giây để tránh trình duyệt chặn tải file hàng loạt
           setTimeout(downloadNextGroup, 1200);
         } catch (err) {
           console.error(err);
-          alert(`Đã xảy ra lỗi khi tạo file nén ZIP phần ${groupIndex + 1}.`);
+          alert(`Lỗi khi tạo file ZIP phần ${groupIndex + 1}.`);
           btnDownloadAll.disabled = false;
           updateZipSizeInfo();
         }
@@ -1571,69 +1670,8 @@
 
       downloadNextGroup();
     });
-
-    // Sự kiện điều hướng phân trang
-
-    document.getElementById('btn-page-first').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage = 1;
-        displayPage(currentPage);
-        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
-      }
-    });
-
-    document.getElementById('btn-page-prev').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        displayPage(currentPage);
-        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
-      }
-    });
-
-    document.getElementById('btn-page-next').addEventListener('click', () => {
-      const totalPages = Math.ceil(extractedImages.length / itemsPerPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        displayPage(currentPage);
-        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
-      }
-    });
-
-    document.getElementById('btn-page-last').addEventListener('click', () => {
-      const totalPages = Math.ceil(extractedImages.length / itemsPerPage);
-      if (currentPage < totalPages) {
-        currentPage = totalPages;
-        displayPage(currentPage);
-        window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
-      }
-    });
-
-    // Sự kiện nhập số trang trực tiếp
-    const pageInput = document.getElementById('page-input');
-    if (pageInput) {
-      const handlePageInputChange = () => {
-        const totalPages = Math.ceil(extractedImages.length / itemsPerPage);
-        let val = parseInt(pageInput.value, 10);
-        if (isNaN(val) || val < 1 || val > totalPages) {
-          pageInput.value = currentPage;
-          return;
-        }
-        if (val !== currentPage) {
-          currentPage = val;
-          displayPage(currentPage);
-          window.scrollTo({ top: imageGrid.offsetTop - 20, behavior: 'smooth' });
-        }
-      };
-
-      pageInput.addEventListener('change', handlePageInputChange);
-      pageInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          handlePageInputChange();
-          pageInput.blur();
-        }
-      });
-    }
   </script>
+
 </body>
 
 </html>
