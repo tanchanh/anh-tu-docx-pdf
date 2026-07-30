@@ -434,12 +434,12 @@
     }
 
     #page-input {
-      width: 3.5rem;
-      padding: 0.3rem;
+      width: 6rem;
+      padding: 0.4rem 0.5rem;
       border: 2px solid var(--border-color);
       border-radius: var(--radius-default);
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: bold;
       font-family: inherit;
       color: var(--text-main);
@@ -797,18 +797,27 @@
       } else {
         pdfPageOptions.style.display = 'none';
       }
-      if (activePdfDoc) {
-        runPdfExtraction();
-      }
     });
 
-    // Lắng nghe phím Enter trong các ô nhập cấu hình PDF
-    [pdfPageRangeInput, pdfQualityInput, pdfMinWidth, pdfMinHeight].forEach(inputEl => {
+    // Lắng nghe phím Enter trong các ô nhập cấu hình PDF (nhấn Enter để Áp dụng)
+    [pdfPageRangeInput, pdfQualityInput, pdfMinWidth, pdfMinHeight, pdfZoomSelect].forEach(inputEl => {
       if (inputEl) {
         inputEl.addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
             e.preventDefault();
-            runPdfExtraction();
+            if (activePdfDoc) runPdfExtraction();
+          }
+        });
+      }
+    });
+
+    // Lắng nghe phím Enter trong các ô nhập cấu hình DOCX (nhấn Enter để Áp dụng)
+    [docxMinWidth, docxMinHeight].forEach(inputEl => {
+      if (inputEl) {
+        inputEl.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            applyDocxFilters();
           }
         });
       }
@@ -1198,24 +1207,28 @@
       }
 
       const pages = new Set();
-      const parts = rangeStr.split(',');
+      const parts = rangeStr.replace(/;/g, ',').split(',');
 
       for (const part of parts) {
         const cleanPart = part.trim();
-        if (cleanPart.includes('-')) {
-          const [startStr, endStr] = cleanPart.split('-');
-          const start = parseInt(startStr.trim());
-          const end = parseInt(endStr.trim());
+        if (!cleanPart) continue;
 
-          if (!isNaN(start) && !isNaN(end)) {
-            const from = Math.min(start, end);
-            const to = Math.max(start, end);
-            for (let p = from; p <= to; p++) {
-              if (p >= 1 && p <= maxPages) pages.add(p);
+        if (cleanPart.includes('-')) {
+          const rangeParts = cleanPart.split('-');
+          if (rangeParts.length >= 2) {
+            const start = parseInt(rangeParts[0].replace(/\D/g, ''));
+            const end = parseInt(rangeParts[1].replace(/\D/g, ''));
+
+            if (!isNaN(start) && !isNaN(end)) {
+              const from = Math.min(start, end);
+              const to = Math.max(start, end);
+              for (let p = from; p <= to; p++) {
+                if (p >= 1 && p <= maxPages) pages.add(p);
+              }
             }
           }
         } else {
-          const p = parseInt(cleanPart);
+          const p = parseInt(cleanPart.replace(/\D/g, ''));
           if (!isNaN(p) && p >= 1 && p <= maxPages) {
             pages.add(p);
           }
@@ -1238,12 +1251,21 @@
       const padLength = String(rawFiltered.length).length;
 
       filteredImages = rawFiltered.map((img, index) => {
-        const numStr = String(index + 1).padStart(padLength, '0');
-        const fileName = `${baseName} trang_${numStr}.${img.extension}`;
+        let fileName, displayName;
+        if (img.isPageRender && img.pageNo) {
+          const pagePadded = String(img.pageNo).padStart(2, '0');
+          displayName = `Trang ${img.pageNo}`;
+          fileName = `${baseName} trang_${pagePadded}.${img.extension}`;
+        } else {
+          const numStr = String(index + 1).padStart(padLength, '0');
+          displayName = numStr;
+          fileName = `${baseName} trang_${numStr}.${img.extension}`;
+        }
+
         return {
           id: 'pdf_' + index,
           name: fileName,
-          displayName: numStr,
+          displayName: displayName,
           width: img.width,
           height: img.height,
           size: img.size,
